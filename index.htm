@@ -61,46 +61,26 @@
                    </div>
                    <div class="todo-text">  
                    
-                  hey there!
+                
                   </div>
 
                </div>
-               <div class="todo-item">
-                   <div class="check">
-                       <div class="check-mark">
-                           <img src="./images/icon-check.svg" alt="">
-                        </div>
-                   </div>
-                   <div class="todo-text">  
-                   
-                    HELLO THERE
-                  </div>
-
-               </div>
-               <div class="todo-item">
-                   <div class="check">
-                       <div class="check-mark"><img src="./images/icon-check.svg" alt=""></div>
-                   </div>
-                   <div class="todo-text">  
-                   
-                    HELLO THERE
-                  </div>
-
-               </div>
+               
+            
 
            </div>
            <div class="todo-items-info">
-               <div>
+               <div class="total-items">
                     5 items
                 </div>
                <div class="items-statuses">
-                   <span class="active"> All</span>
-                   <span> Active</span>
-                   <span>Completed</span>
+                   <span class="" onclick="allItems()"> All</span>
+                   <span onclick="activeItems(event)" class="active-items"> Active</span>
+                   <span onclick="completedItems(event)" class="completed-items">Completed</span>
 
                </div>
                <div class="items-clear">
-                   <span> clear completed!</span>
+                   <span onclick="clearCompletedItems(event)" class="completed-items"> clear completed!</span>
 
                </div>
                 

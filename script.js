@@ -1,13 +1,132 @@
+function activeItems(){
+  db.collection("todo-items").onSnapshot((snapshot) => {
+    // console.log(snapshot.docs[0].data);
+    let items = [];
+    
+    snapshot.docs.forEach((doc) => {
+      if(doc.data().status == "active") {
+        items.push({
+          id: doc.id,
+          ...doc.data(),
+        });
+      }
+     
+     
+    });
+    // console.log(items);
+    generateItems(items);
+    numberOfItems(items.length);
+    
+
+    
+  });
+ 
+}
+function allItems(event) {
+  db.collection("todo-items").onSnapshot((snapshot) => {
+    // console.log(snapshot.docs[0].data);
+    let items = [];
+    
+    snapshot.docs.forEach((doc) => {
+     
+      items.push({
+        id: doc.id,
+        ...doc.data(),
+      });
+    });
+    console.log(items);
+    generateItems(items);
+    numberOfItems(items.length);
+    
+
+    
+  });
+
+}
+
+function completedItems() {
+  db.collection("todo-items").onSnapshot((snapshot) => {
+    // console.log(snapshot.docs[0].data);
+    let items = [];
+    
+    snapshot.docs.forEach((doc) => {
+      if(doc.data().status == "completed") {
+        items.push({
+          id: doc.id,
+          ...doc.data(),
+        });
+      }
+     
+     
+    });
+    // console.log(items);
+    generateItems(items);
+    numberOfItems(items.length);
+    
+
+    
+  });
+
+
+
+}
+
+function clearCompletedItems(event){
+  db.collection("todo-items").onSnapshot((snapshot) => {
+    // console.log(snapshot.docs[0].data);
+    let items = [];
+    
+    snapshot.docs.forEach((doc) => {
+      if(doc.data().status == "completed") {
+       db.collection("todo-items").doc(doc.id).delete().then(() => {
+         console.log("successfull");
+       }).catch((error) => {
+        console.error("Error removing document: ", error);
+    });
+      }
+     
+     
+    });
+    // console.log(items);
+    // generateItems(items);
+    // numberOfItems(items.length);
+    location.reload();
+    
+
+    
+  });
+
+}
+
+
+// function clearCompletedItems(event){
+  
+  
+// }
+// function getActiveItems(){
+
+//  }
+
 function addItem(event) {
+
   event.preventDefault();
   // console.log("hello",event);
   let text = document.getElementById("todo-input");
-  db.collection("todo-items").add({
-    text: text.value,
-    status: "active",
-  });
-  text.value = "";
+  if(text.value != "" && text.value != " "){
+    db.collection("todo-items").add({
+      text: text.value,
+      status: "active",
+    });
+    text.value = "";
+  }
+  else{
+    alert(" write something !")
+  }
+
+  
 }
+
+
 
 function getItems() {
   db.collection("todo-items").onSnapshot((snapshot) => {
@@ -23,6 +142,10 @@ function getItems() {
     });
     console.log(items);
     generateItems(items);
+    numberOfItems(items.length);
+    
+
+    
   });
 }
 
@@ -89,4 +212,17 @@ function markCompleted(id) {
     }
   })
 }
+
+
+
 getItems();
+
+
+
+
+function numberOfItems(length) {
+ document.querySelector(".total-items").innerText = length + " items";
+
+}
+
+
