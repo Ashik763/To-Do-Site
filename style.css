@@ -37,20 +37,34 @@ body{
         /* MAIN CONTAINER */
 .container{
     /* background-color: yellow; */
-   min-width:600px;
+   width:600px;
     margin-top: 20vh;
 
 }
-/* @media (max-width: 900px) {
+@media (max-width: 650px) {
     *{
         margin: 0;
        padding: 0; 
        box-sizing: border-box;
    }
-.title{
-        color:red;
-    }
-} */
+  .container{
+      width: 75%;
+  }
+  .todo-items-wrapper{
+      height:80%;
+  }
+  .todo-items-info{
+      display:flex;
+      flex-direction: column;
+      height:auto;
+      
+  }
+
+  .total-items,.items-statuses,.items-clear{
+       margin: 5px 0px;
+      
+  }
+}
 
 .header{
     display:flex;
