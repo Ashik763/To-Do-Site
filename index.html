@@ -19,9 +19,10 @@
     <script  src="./firebase.js"> </script>
     <script src="./script.js"> </script>
 </head>
-<body>
-   <div class="background-image">
-    <img src="./images/bg-desktop-dark.jpg"  />
+<body class="body">
+   <div id="background-image" class="background-image">
+    <img id="image"  theme="dark" src="./images/bg-desktop-dark.jpg"  />
+    <!-- ./images/bg-desktop-dark.jpg -->
 
    </div>
    <div class="container">
@@ -29,15 +30,15 @@
             <div class="title">
                 TO DO
             </div>
-            <div class="theme"> 
+            <div id="sun-moon" onclick="themeChange(event)" class="theme"> 
 
                 <img src="./images/icon-sun.svg">
             </div>
     
     
        </div> 
-       <div class="new-todo"> 
-           <div class="check"> 
+       <div class="new-todo white"> 
+           <div onclick="addItem(event)" class="check"> 
                <!-- <button class="btn"> </button> -->
                <div class="check-mark">
 
@@ -51,8 +52,8 @@
            </div>
 
        </div>  
-       <div class="todo-items-wrapper"> 
-           <div class="todo-items"> 
+       <div class="todo-items-wrapper white"> 
+           <div class="todo-items white"> 
                <div class="todo-item">
                    <div class="check">
                        <div class="check-mark">
@@ -71,7 +72,7 @@
            </div>
            <div class="todo-items-info">
                <div class="total-items">
-                    5 items
+                    number of items
                 </div>
                <div class="items-statuses">
                    <span class="" onclick="allItems()"> All</span>

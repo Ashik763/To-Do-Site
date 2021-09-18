@@ -13,8 +13,12 @@ body{
     font-family: 'Josefin Sans', sans-serif;
     background-color: #181824;
 
+
     font-size:18px;
 }
+/* #light{
+    background-color: #ffffff;
+} */
 .background-image{
     position: absolute;
     width: 100%;
@@ -190,5 +194,10 @@ align-items: center;
 
 
 }
+/* .mystyle {
+background-image: url("./images/bg-desktop-light.jpg");
+    box-sizing: border-box;
+    
+  } */
 
 
