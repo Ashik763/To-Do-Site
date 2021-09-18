@@ -6,7 +6,7 @@ I have built this just for you!!I know you forget to finish couple of things .He
 * The active tasks list will be shown !
 * Lastly,there are two modes ,day and night !!
 I know you are excited to check this out! 
-check it out :https://ashik763.github.io/To-Do-Site/
+So, check it out :https://ashik763.github.io/To-Do-Site/
 
 and write something so that I get to know that somebody used my site!!
 
